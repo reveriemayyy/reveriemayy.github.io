@@ -12,13 +12,32 @@ h1 {
     font-family: 'Alexandria';font-size: 100px;
   white-space: nowrap;
   overflow: visible;
+  margin: 0;
 }
+    .core {
+      position: relative;      /* anchor for the tail */
+      display: inline-block;   /* shrink-wrap to 'reverie may' */
+      white-space: nowrap;
+    }
+
+    /* the y-tail doesn’t affect layout */
+    .core::after {
+      content: attr(data-tail);
+      position: absolute;
+      left: -.3em;   /* start right after the core text */
+ 	  top: -.97em;    
+      white-space: nowrap;  /* one line, no wrap */
+      pointer-events: none; /* purely decorative */
+    }
 </style>
   <head>
     <title>depot</title>
   </head>
   <body>
-    <h1 style="text-align: center">Reverie Mayyyyyyyyyyyy</h1>
+    <h1 style="text-align: center">Reverie May
+       <span class="core" id="core" data-tail="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"></span>
+    </h1>
+ 
     <p>haii here it is twin</p>
     <body style="background-color:#414A4C;">
   </body>
