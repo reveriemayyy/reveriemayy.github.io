@@ -4,20 +4,24 @@
 <link href='https://fonts.googleapis.com/css?family=Alexandria' rel='stylesheet'>
 <style>
 h1   {color: white;}
+h2   {color: white; font-size: 30px;}
 p    {color: white;}
+body {margin:0px; padding-right: 0px; background-color:#414A4C;;}
 p {
     font-family: 'Aldrich';font-size: 22px;
+    overflow: auto;
 }
 h1 {
     font-family: 'Alexandria';font-size: 100px;
   white-space: nowrap;
-  overflow: visible;
   margin: 0;
+  overflow-x: hidden;
 }
     .core {
       position: relative;      /* anchor for the tail */
       display: inline-block;   /* shrink-wrap to 'reverie may' */
       white-space: nowrap;
+      scrollbar-width: none;
     }
 
     /* the y-tail doesn’t affect layout */
@@ -28,17 +32,58 @@ h1 {
  	  top: -.97em;    
       white-space: nowrap;  /* one line, no wrap */
       pointer-events: none; /* purely decorative */
+
+ 
     }
+
+    .box-left {
+         border: 2px solid white;
+         background: black;
+         padding: 10px;
+         border-radius: 10px;
+         width: 30%;
+         height: 30vmax;
+         overflow:clip;
+         position: relative;
+         animation: ambient 8s infinite;
+         animation-timing-function: ease-in-out;
+    }
+
+        .box-left:hover {
+         border: 2px solid white;
+         background: black;
+         padding: 10px;
+         border-radius: 10px;
+         width: 70%;
+         height: 30vmax;
+         overflow:clip;
+         position: relative;
+         animation: ambient 8s infinite;
+         animation-timing-function: ease-in-out;
+         animation-play-state: paused;
+    }
+
+
+@keyframes ambient {
+  0% {transform: translate(0);}
+  20% {transform: translate(-2px, 2px);}
+  40% {transform: translate(-2px, -2px);}
+  60% {transform: translate(2px, 2px);}
+  80% {transform: translate(2px, -2px);}
+  100% {transform: translate(0);}
+}
+
 </style>
   <head>
     <title>depot</title>
   </head>
   <body>
-    <h1 style="text-align: center">Reverie May
-       <span class="core" id="core" data-tail="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"></span>
-    </h1>
- 
-    <p>haii here it is twin</p>
-    <body style="background-color:#414A4C;">
+         <h1 style="text-align: center">Reverie May
+              <span class="core" id="core" data-tail="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"></span>
+            </h1>
+ <div class="box-left">
+    <h2> Hello this is my project numba 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
   </body>
 </html>
