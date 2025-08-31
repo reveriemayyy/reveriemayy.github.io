@@ -29,12 +29,15 @@ h1 {
       content: attr(data-tail);
       position: absolute;
       left: -.3em;   /* start right after the core text */
- 	  top: -.97em;    
+ 	    top: -.97em;    
       white-space: nowrap;  /* one line, no wrap */
       pointer-events: none; /* purely decorative */
-
- 
+      animation: typing 10s infinite;
+      animation-delay: 10s;
     }
+      .fake-body{
+        padding-right: 15px;
+      }
 
     .box-left {
          border: 2px solid white;
@@ -47,6 +50,7 @@ h1 {
          position: relative;
          animation: ambient 8s infinite;
          animation-timing-function: ease-in-out;
+         transition: .2s;
     }
 
         .box-left:hover {
@@ -55,13 +59,85 @@ h1 {
          padding: 10px;
          border-radius: 10px;
          width: 70%;
-         height: 30vmax;
-         overflow:clip;
+         height: 50vmax;
+         overflow-y:scroll;
          position: relative;
          animation: ambient 8s infinite;
          animation-timing-function: ease-in-out;
          animation-play-state: paused;
     }
+
+     .box-right {
+         border: 2px solid white;
+         background: black;
+         padding: 10px;
+         border-radius: 10px;
+         width: 30%;
+         height: 30vmax;
+         overflow:clip;
+         position: relative;
+         animation: ambient 8s infinite;
+         animation-timing-function: ease-in-out;
+         transition: .2s;
+         float: right;
+    }
+
+        .box-right:hover {
+         border: 2px solid white;
+         background: black;
+         padding: 10px;
+         border-radius: 10px;
+         width: 70%;
+         height: 50vmax;
+         overflow-y:scroll;
+         position: relative;
+         animation: ambient 8s infinite;
+         animation-timing-function: ease-in-out;
+         animation-play-state: paused;
+         float: right;
+    }
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+@keyframes typing {
+  0.0000%, 100% { content: "y"; }
+  1.5%, 99.5% { content: "yy"; }
+  3%, 98% { content: "yyy"; }
+  4.5%, 96.5% { content: "yyyy"; }
+  6%, 95% { content: "yyyyy"; }
+  7.5%, 93.5% { content: "yyyyyy"; }
+  9%, 92% { content: "yyyyyyy"; }
+  10.5%, 90.5% { content: "yyyyyyyy"; }
+  12%, 89% { content: "yyyyyyyyy"; }
+  13.5%, 87.5% { content:"yyyyyyyyyy"; }
+  15%, 86% { content: "yyyyyyyyyyy"; }
+  16.5%, 84.5% { content: "yyyyyyyyyyyy"; }
+  18%, 83% { content: "yyyyyyyyyyyyy"; }
+  19.5%, 81.5% { content: "yyyyyyyyyyyyyy"; }
+  21%, 80% { content: "yyyyyyyyyyyyyyy"; }
+  22.5%, 78.5% { content: "yyyyyyyyyyyyyyyy"; }
+  24%, 77% { content: "yyyyyyyyyyyyyyyyy"; }
+  25.5%, 75.5% { content: "yyyyyyyyyyyyyyyyyy"; }
+  27%, 74% { content: "yyyyyyyyyyyyyyyyyyy"; }
+  28.5%, 72.5% { content: "yyyyyyyyyyyyyyyyyyyy"; }
+  30%, 71% { content: "yyyyyyyyyyyyyyyyyyyyy"; }
+  31.5%, 69.5% { content: "yyyyyyyyyyyyyyyyyyyyyy"; }
+  33%, 68% { content: "yyyyyyyyyyyyyyyyyyyyyyy"; }
+  34.5%, 66.5% { content: "yyyyyyyyyyyyyyyyyyyyyyyy"; }
+  36%, 65% { content: "yyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  37.5%, 63.5% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  39%, 62% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  40.5%, 60.5% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  42%, 59% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  43.5%, 57.5% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  45%, 56% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  46.5%, 54.5% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  48%, 53% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"; }
+  50%, 51.5% { content: "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy stop looking here >:["; }
+
+}
 
 
 @keyframes ambient {
@@ -78,12 +154,19 @@ h1 {
     <title>depot</title>
   </head>
   <body>
-         <h1 style="text-align: center">Reverie May
+         <h1 style="text-align: center">Reverie Ma
               <span class="core" id="core" data-tail="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"></span>
             </h1>
+<div class="fake-body">
  <div class="box-left">
     <h2> Hello this is my project numba 1</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>i ut aliquiprepolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<br>
+ <div class="box-right">
+    <h2> Hello this is my project numba 2</h2>
+    <p>dude i feel so freaking sick i might just end it all </p>
+</div>
 </div>
   </body>
 </html>
